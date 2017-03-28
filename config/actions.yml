@@ -1,0 +1,15 @@
+actions:
+  1:
+    action: delete_indices
+    
+    filters:
+    - filtertype: pattern
+      kind: prefix
+      value: index-prefix-
+      exclude: False
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit_count: 14
+      unit: days
+      exclude: False
